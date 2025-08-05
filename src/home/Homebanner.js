@@ -4,7 +4,6 @@ const Homebanner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const totalItems = 4;
 
-  // Scroll to next section on arrow click
   const handleScroll = () => {
     const nextSection = document.getElementById("next-section");
     if (nextSection) {
@@ -32,7 +31,7 @@ const Homebanner = () => {
 
     if (carouselEl) {
       carouselEl.addEventListener("slid.bs.carousel", updateCounter);
-      updateCounter(); // initial run
+      updateCounter(); // initial
     }
 
     return () => {
@@ -41,6 +40,11 @@ const Homebanner = () => {
       }
     };
   }, []);
+
+  const videoSrc = `${process.env.PUBLIC_URL}/video/banner.mp4`;
+  const rightArrow = `${process.env.PUBLIC_URL}/images/rightarrow.png`;
+  const leftArrow = `${process.env.PUBLIC_URL}/images/leftarrow.png`;
+  const downArrow = `${process.env.PUBLIC_URL}/images/downarrow.gif`;
 
   return (
     <>
@@ -68,7 +72,7 @@ const Homebanner = () => {
             {[...Array(totalItems)].map((_, index) => (
               <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
                 <video autoPlay muted loop className="videoInsert">
-                  <source src="video/banner.mp4" type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" />
                 </video>
                 <div className="caption-wrapper d-flex align-items-center">
                   <div className="container-fluid text-start text-white px-5">
@@ -118,11 +122,10 @@ const Homebanner = () => {
                 }}
               >
                 <span className="carousel-control-prev-icon">
-                  <img src="images/rightarrow.png" width={35} alt="Prev" />
+                  <img src={rightArrow} width={35} alt="Prev" />
                 </span>
               </button>
 
-              {/* Slide Counter */}
               <span
                 id="carouselSlideCounter"
                 className="carousel-counter text-white position-absolute top-50 start-50 translate-middle d-flex align-items-baseline"
@@ -144,7 +147,7 @@ const Homebanner = () => {
                 }}
               >
                 <span className="carousel-control-next-icon">
-                  <img src="images/leftarrow.png" width={35} alt="Next" />
+                  <img src={leftArrow} width={35} alt="Next" />
                 </span>
               </button>
             </div>
@@ -152,7 +155,7 @@ const Homebanner = () => {
 
           {/* Down Arrow Scroll */}
           <div className="downarrow" onClick={handleScroll}>
-            <img src="images/downarrow.gif" alt="Scroll Down" />
+            <img src={downArrow} alt="Scroll Down" />
           </div>
         </div>
       </div>

@@ -25,7 +25,8 @@ const Ourbrands = () => {
           {[...brandImages, ...brandImages].map((brand, index) => (
             <div key={index} className="brand-slide">
               <a href={brand.link} target="_blank" rel="noopener noreferrer">
-                <img src={`/images/${brand.src}`} alt={`Brand ${index + 1}`} />
+                <img src={`${process.env.PUBLIC_URL}/images/${brand.src}`} alt={`Brand ${index + 1}`} />
+
               </a>
             </div>
           ))}
