@@ -2,7 +2,7 @@
   "name": "ebixreact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://supritsuman.github.io/ebixreact",
+  "homepage": "https://ebixcorp.github.io/ebixreact/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
