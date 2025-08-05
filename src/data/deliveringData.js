@@ -1,3 +1,5 @@
+// src/data/deliveringData.js
+
 const deliveringData = {
   heading: "Delivering Smarter Solutions for a Smarter Tomorrow",
   description:
@@ -5,9 +7,9 @@ const deliveringData = {
   button: {
     textTop: "Read More →",
     textBottom: "Read More →",
-    link: "#"
+    link: "#",
   },
-   videoSrc: `${process.env.PUBLIC_URL}/videos/delivering.mp4`,
+  videoSrc: `${process.env.PUBLIC_URL}/video/delivering.mp4`,
 };
 
 export default deliveringData;
