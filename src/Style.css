@@ -625,7 +625,7 @@ padding:50px 20px;
     transform: translateX(0);
   }
 }
-
+@media (min-width: 1000px) {
 /* Slide In From Right */
 @keyframes fadeInRight {
   0% {
@@ -636,6 +636,8 @@ padding:50px 20px;
     opacity: 1;
     transform: translateX(0);
   }
+}
+
 }
 
 .submenu-1{width:900px; margin-left:-125px; padding:0;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
@@ -728,9 +730,7 @@ padding:50px 20px;
 .submenu-1 li{border-right:none;         border-bottom: 1px solid #EBEBEB;} 
 
 .menuclosex{font-size:35px;     margin-top: -7px;}
-  .bannerreadmore {
-    animation: none !important;
-  }
+
 }
 
 @media only screen and (max-width:990px){
