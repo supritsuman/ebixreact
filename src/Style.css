@@ -638,26 +638,17 @@ padding:50px 20px;
   }
 }
 @media (min-width: 1000px) {
-/* Animation definition — always outside media queries */
-@keyframes fadeInRight {
+  @keyframes fadeInRight {
   0% {
-    opacity: 0;
-    transform: translateX(50px);
+    opacity:1;
+    transform: translateX(0);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
-/* Default: No animation */
-.bannerreadmore {
-  animation: none;
-  opacity: 1;
-  transform: none;
 }
-
-
 
 .submenu-1{width:900px; margin-left:-125px; padding:0;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 .submenu-1 li{ height:120px; width:128px; float: left;  border-bottom:#c8c8c8 1px solid; border-right:#c8c8c8 1px solid;}
@@ -875,8 +866,3 @@ padding:50px 20px;
 }
 */
 
-@media (min-width: 1000px) {
-
-}
-
-}
