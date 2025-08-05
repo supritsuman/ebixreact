@@ -1,9 +1,9 @@
 body{ font-family: 'Inter', sans-serif!important;     overflow-x: hidden;}
 
 .topnav{border-bottom:#DEDEDE 1px solid; height:35px; text-align:right; padding-top:5px; font-size:14px; font-family: 'Inter', sans-serif;
-  font-weight:300; position:fixed; width:100%; background:#fff; z-index: 999999; top:0; }
+  font-weight:300; position:fixed; width:100%; background:#fff; z-index: 999999; top:0;left: 0; }
 
-.navnew{background-color:#fff; position:fixed; z-index:999999; width:100%; top:35px;     border-bottom: #DEDEDE 1px solid;}  
+.navnew{background-color:#fff; position:fixed; z-index:999999; width:100%; top:35px;     border-bottom: #DEDEDE 1px solid; left:0;}  
 .topnav a {  color: #000;  text-decoration: none;  padding: 5px 15px;  transition: color 0.35s ease;  position: relative;  overflow: hidden;  z-index: 1;  border-radius: 5px;}
 
 .topnav a::before {  content: "";  position: absolute;  top: 0;  left: 50%;  width: 0;  height: 100%;  background-color: #0382EA;  transition: width 0.35s ease, left 0.35s ease;  z-index: -1;  transform: translateX(-50%);  border-radius: 5px;}
@@ -654,6 +654,7 @@ padding:50px 20px;
 #myCarousel .bannerreadmore .bannerbtn::after{background: #fff;}
 #myCarousel .bannerreadmore .bannerbtn:hover{border: 2px solid #0382EA;}
 #myCarousel .bannerreadmore:hover .bannerbtn::after{background: #0382EA;}
+
 
 
 @media only screen and (max-width:1170px)
