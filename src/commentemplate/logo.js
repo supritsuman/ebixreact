@@ -1,7 +1,6 @@
+const Logo = () => {
+  const logoimg = `${process.env.PUBLIC_URL}/images/logo.svg`;
 
-
-const logo = () => {
-  const logoimg = "images/logo.svg";  
   return (
     <>
       <img src={logoimg} alt="Logo" className="logotop" />
@@ -9,4 +8,4 @@ const logo = () => {
   );
 };
 
-export default logo;
+export default Logo;

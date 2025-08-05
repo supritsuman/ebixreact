@@ -7,7 +7,7 @@ const deliveringData = {
     textBottom: "Read More →",
     link: "#"
   },
-  videoSrc: "video/delivering.mp4"
+   videoSrc: `${process.env.PUBLIC_URL}/videos/delivering.mp4`,
 };
 
 export default deliveringData;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Logo from "./logo";
+import Logo from "./logo"; // This should return <img> with PUBLIC_URL path
 
 const Header = () => {
   const [region, setRegion] = useState("Ebix India");
@@ -24,18 +24,21 @@ const Header = () => {
     };
   }, []);
 
-  // Sync Bootstrap collapse with navbar state
   useEffect(() => {
     const navCollapse = document.getElementById("mainNavbar");
     const handleShown = () => setIsNavbarOpen(true);
     const handleHidden = () => setIsNavbarOpen(false);
 
-    navCollapse.addEventListener("shown.bs.collapse", handleShown);
-    navCollapse.addEventListener("hidden.bs.collapse", handleHidden);
+    if (navCollapse) {
+      navCollapse.addEventListener("shown.bs.collapse", handleShown);
+      navCollapse.addEventListener("hidden.bs.collapse", handleHidden);
+    }
 
     return () => {
-      navCollapse.removeEventListener("shown.bs.collapse", handleShown);
-      navCollapse.removeEventListener("hidden.bs.collapse", handleHidden);
+      if (navCollapse) {
+        navCollapse.removeEventListener("shown.bs.collapse", handleShown);
+        navCollapse.removeEventListener("hidden.bs.collapse", handleHidden);
+      }
     };
   }, []);
 
@@ -142,54 +145,64 @@ const Header = () => {
                       {menu.label}
                     </label>
 
-                    {isIndustries ? (
-                      <ul className={`dropdown-menu submenu-${idx}`}>
-                        {[
-                          "Insurance",
-                          "Healthcare",
-                          "Health & Wellness",
-                          "Finance & Banking",
-                          "Everyday & Leisure Travel",
-                          "Business & Corporate Travel",
-                          "Payment Services",
-                          "Group Experiences & Events",
-                          "Bespoke & Luxury Journeys",
-                          "Remittance",
-                          "Forex",
-                          "Gift Cards & Vouchers",
-                          "Remittance",
-                          "Education",
-                        ].map((label, i) => (
-                          <li key={i} className={i === 6 || i === 13 ? "borgnone" : ""}>
-                            <a className="dropdown-item" href="#">
-                              <div className="insobox">
-                                <div className="menuicon">
-                                  <img src={`images/menuiocn${i + 1}.svg`} alt="" />
+                    <ul className={`dropdown-menu submenu-${idx}`}>
+                      {isIndustries
+                        ? [
+                            "Insurance",
+                            "Healthcare",
+                            "Health & Wellness",
+                            "Finance & Banking",
+                            "Everyday & Leisure Travel",
+                            "Business & Corporate Travel",
+                            "Payment Services",
+                            "Group Experiences & Events",
+                            "Bespoke & Luxury Journeys",
+                            "Remittance",
+                            "Forex",
+                            "Gift Cards & Vouchers",
+                            "Remittance",
+                            "Education",
+                          ].map((label, i) => (
+                            <li
+                              key={i}
+                              className={i === 6 || i === 13 ? "borgnone" : ""}
+                            >
+                              <a className="dropdown-item" href="#">
+                                <div className="insobox">
+                                  <div className="menuicon">
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/menuiocn${
+                                        i + 1
+                                      }.svg`}
+                                      alt={`Icon ${i + 1}`}
+                                      onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = `${process.env.PUBLIC_URL}/images/default.svg`;
+                                      }}
+                                    />
+                                  </div>
+                                  <p>{label}</p>
                                 </div>
-                                <p>{label}</p>
-                              </div>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <ul className={`dropdown-menu submenu-${idx}`}>
-                        {menu.items.map((item, subIdx) => (
-                          <li key={subIdx}>
-                            <a className="dropdown-item" href="#">
-                              {item}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                              </a>
+                            </li>
+                          ))
+                        : menu.items.map((item, subIdx) => (
+                            <li key={subIdx}>
+                              <a className="dropdown-item" href="#">
+                                {item}
+                              </a>
+                            </li>
+                          ))}
+                    </ul>
                   </li>
                 );
               })}
             </ul>
           </div>
 
+          {/* Right Side Icons */}
           <div className="d-flex align-items-center nav-icons position-relative rightseach">
+            {/* Search Button */}
             <button
               className="btn searchbut"
               type="button"
@@ -201,6 +214,7 @@ const Header = () => {
               <i className="bi bi-search"></i>
             </button>
 
+            {/* Search Box */}
             <div
               className="collapse position-absolute top-100 start-0 mt-2"
               id="searchBox"
@@ -213,10 +227,12 @@ const Header = () => {
               />
             </div>
 
+            {/* Globe Icon */}
             <a href="#" className="ms-2">
               <i className="bi bi-globe2 coloriconb"></i>
             </a>
 
+            {/* Region Selector */}
             <div className="dropdown ms-2">
               <a
                 className="nav-link dropdown-toggle tgnew"

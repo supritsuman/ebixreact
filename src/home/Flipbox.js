@@ -1,4 +1,4 @@
-import flipboxData from '../data/flipboxData'; 
+import flipboxData from '../data/flipboxData';
 
 const Flipbox = () => {
   return (
@@ -9,13 +9,13 @@ const Flipbox = () => {
             <div className="flip-box-inner">
               {/* Front Side */}
               <div className="flip-side flip-front">
-                <img src={item.image} alt={item.title} className="flipimg" />
+                <img src={`${process.env.PUBLIC_URL}/${item.image}`} alt={item.title} className="flipimg" />
                 <div className="overlay">
                   <h2>{item.title}</h2>
                   <div className="technologylink">
                     {item.frontLinks.map((link, i) => (
                       <span key={i}>
-                        <img src={link.icon} width={15} alt={link.label} /> {link.label}
+                        <img src={`${process.env.PUBLIC_URL}/${link.icon}`} width={15} alt={link.label} /> {link.label}
                       </span>
                     ))}
                   </div>
@@ -24,14 +24,14 @@ const Flipbox = () => {
 
               {/* Back Side */}
               <div className="flip-side flip-back">
-                <img src={item.image} className="flipimg" alt={item.title} />
+                <img src={`${process.env.PUBLIC_URL}/${item.image}`} className="flipimg" alt={item.title} />
                 <div className="overlay">
                   <h2>{item.title}</h2>
                   <p>{item.backText}</p>
                   <div className="tereadmore text-start">
                     <a className="read-more-btn" href="#">
                       <span className="arrow">
-                        <img src="./images/icon5.svg" alt="arrow" />
+                        <img src={`${process.env.PUBLIC_URL}/images/icon5.svg`} alt="arrow" />
                       </span>{' '}
                       Read More
                     </a>

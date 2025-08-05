@@ -1,5 +1,3 @@
-// src/data/footerData.js
-
 export const aboutEbixLinks = [
   "Company information",
   "Worldwide directory",
@@ -9,7 +7,6 @@ export const aboutEbixLinks = [
   "Events",
   "Customer stories",
   "Newsletter",
-  
 ];
 
 export const quickLinks = [
@@ -35,31 +32,30 @@ export const siteInfoLinks = [
   "Trademark",
   "Cookies statement",
   "Cookies preference",
-  
 ];
 
 export const supportItems = [
   {
-    icon: "/images/headphones.svg",
+    icon: `${process.env.PUBLIC_URL}/images/headphones.svg`,
     label: "Support",
     info: "+1 (678) 281-2020 | +1 (678) 281-2019",
     note: "See our complete list of ",
     link: "local country numbers",
   },
   {
-    icon: "/images/mail.svg",
+    icon: `${process.env.PUBLIC_URL}/images/mail.svg`,
     label: "Contact us",
     href: "#",
   },
   {
-    icon: "/images/sms.svg",
+    icon: `${process.env.PUBLIC_URL}/images/sms.svg`,
     label: "Chat now",
     href: "#",
   },
 ];
 
 export const socialIcons = [
-  { icon: "/images/fb.svg", alt: "Facebook" },
-  { icon: "/images/in.svg", alt: "LinkedIn" },
-  { icon: "/images/x.svg", alt: "Twitter" },
+  { icon: `${process.env.PUBLIC_URL}/images/fb.svg`, alt: "Facebook" },
+  { icon: `${process.env.PUBLIC_URL}/images/in.svg`, alt: "LinkedIn" },
+  { icon: `${process.env.PUBLIC_URL}/images/x.svg`, alt: "Twitter" },
 ];

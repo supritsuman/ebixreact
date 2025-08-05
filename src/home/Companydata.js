@@ -30,7 +30,7 @@ const Companydata = () => {
       <div className="row">
         <div className="col-md-4 mt-4">
           <div className="w-100 companydataimg">
-            <img src="images/icon17.svg" alt="EbixCash Tower" className="flipimg" />
+            <img  src={`${process.env.PUBLIC_URL}/images/icon17.svg`}alt="EbixCash Tower" className="flipimg" />
           </div>
           <h2 className="count" data-target="20">0</h2>
           <p>Employees</p>
@@ -38,7 +38,7 @@ const Companydata = () => {
 
         <div className="col-md-4  mt-4">
           <div className="w-100 companydataimg">
-            <img src="images/icon18.svg" alt="EbixCash Tower" className="flipimg" />
+            <img  src={`${process.env.PUBLIC_URL}/images/icon18.svg`} className="flipimg" />
           </div>
           <h2 className="count" data-target="70">0</h2>
           <p>Our Presence</p>
@@ -46,7 +46,7 @@ const Companydata = () => {
 
         <div className="col-md-4  mt-4">
           <div className="w-100 companydataimg">
-            <img src="images/icon19.svg" alt="EbixCash Tower" className="flipimg" />
+            <img src={`${process.env.PUBLIC_URL}/images/icon19.svg`} alt="EbixCash Tower" className="flipimg" />
           </div>
           <h2 className="count" data-target="25">0</h2>
           <p>Years of Exp</p>
