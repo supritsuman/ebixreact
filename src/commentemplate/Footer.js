@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Logo & Support Section */}
           <div className="col-md-3">
-            <img  src="{`${process.env.PUBLIC_URL}/logo-footer.svg`}" alt="Ebix Logo" style={{ height: "50px" }} />
+            <img  src="{`${process.env.PUBLIC_URL}/videos/intro.mp4`}" alt="Ebix Logo" style={{ height: "50px" }} />
             <div className="mt-4 small">
               {supportItems.map((item, i) => (
                 <div key={i} className="support-info-box d-flex align-items-start gap-3 w-100 mb-3">
