@@ -651,7 +651,13 @@ padding:50px 20px;
 }
 
 .submenu-1{width:900px; margin-left:-125px; padding:0;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
-.submenu-1 li{ height:120px; width:128px; float: left;  border-bottom:#c8c8c8 1px solid; border-right:#c8c8c8 1px solid; }
+.submenu-1 li{ height:120px; width:128px; float: left;  border-bottom:#c8c8c8 1px solid; border-right:#c8c8c8 1px solid;    transition: background-color 0.6s ease-in-out, border-color 0.6s ease-in-out;  overflow: hidden;  position: relative;}
+.submenu-1 li:hover{    background-color: #e6f7ff; border-bottom:#0382ea 2px solid;}
+.submenu-1 li > * {  transition: transform 0.6s ease-in-out;  transform-origin: top;}
+.submenu-1 li:hover > * {  transform: scale(1.04);}
+
+
+
 .submenu-1 a{padding:0; text-align: center; width: 100%; display: block;}
 .insobox{float: left; width:100%;}
 .submenu-1 p{font-size:14px; color:#6d6d6d; float: left; text-align: center;  width: 100%; white-space: break-spaces; padding:0 10px; line-height:18px;}  
@@ -735,7 +741,7 @@ padding:50px 20px;
 #mainNavbar .dropdown-menu{border-top: 1px solid #EBEBEB;}
 .menuicon{display:none;}
 .submenu-1{margin-left:0; width:100%;}
-.submenu-1 li{height: auto; width:100%; text-align: left;     padding: 8px 20px;}
+.submenu-1 li{height: auto; width:100%; text-align: left;     padding: 8px 35px;}
 .submenu-1 p{text-align: left;  font-size: 16px;    color: #000; margin:0; padding:0; line-height: normal;}
 .submenu-1 li{border-right:none;         border-bottom: 1px solid #EBEBEB;} 
 
