@@ -935,8 +935,8 @@ padding:50px 20px;
 
 
 .about-nav {
-  background-color: #0b182d;
-  padding: 12px 30px;
+  background-color: #0D1A2F;
+  padding: 15px 30px;
   transition: all 0.2s ease;
   position: relative; /* NOT fixed by default */
   box-sizing: border-box;
@@ -959,9 +959,12 @@ padding:50px 20px;
   list-style: none;
 }
 
-.about-nav .label { color: #fff; font-weight: 700; }
-.about-nav li { color: #9da6b1; cursor: pointer; }
-.about-nav li.active { color: #ffd700; }
+.about-nav .label { color: #fff;  }
+.about-nav li {color:rgba(255, 255, 255, 57%); font-size:16px;  transition: color 0.35s ease;}
+.about-nav li a{color:rgba(255, 255, 255, 57%); font-size:16px;  transition: color 0.35s ease; text-decoration:none;;}
+.about-nav li a.active { color: #FFD354; }
+.about-nav li span{color:rgba(255, 255, 255, 15%);}
+.about-nav li a:hover{color: #FFD354; }
 
 
 @media only screen and (max-width:1170px)

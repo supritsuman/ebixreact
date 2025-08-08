@@ -6,7 +6,15 @@ const Aboutnav = () => {
   const [stickyProps, setStickyProps] = useState(null);
   const [originalOffset, setOriginalOffset] = useState(0);
 
-  // Function to get total nav height (topnav + main nav)
+  // Navigation links data (dynamic)
+  const navLinks = [
+    { label: "Overview", href: "#", active: true },
+    { label: "Industry Expertise", href: "#" },
+    { label: "Our Reach", href: "#" },
+    { label: "Leadership", href: "#" },
+    { label: "Core Values", href: "#" },
+  ];
+
   const getTotalNavHeight = () => {
     const topNav = document.querySelector(".topnav");
     const mainNav = document.querySelector(".navnew");
@@ -20,8 +28,6 @@ const Aboutnav = () => {
       const totalNavHeight = getTotalNavHeight();
       const rect = aboutRef.current.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
-
-      // Store original offset from document top
       setOriginalOffset(rect.top + scrollY - totalNavHeight);
     }
   }, []);
@@ -38,6 +44,7 @@ const Aboutnav = () => {
           top: totalNavHeight,
           left: rect.left + window.scrollX,
           height: rect.height,
+          width: rect.width, // ✅ Added width
         });
         setIsSticky(true);
       } else {
@@ -73,21 +80,23 @@ const Aboutnav = () => {
       >
         <ul>
           <li className="label">NAVIGATE TO</li>
-           <li>|</li>
-          <li className="active">Overview</li>
-           <li>|</li>
-          <li>Industry Expertise</li>
-           <li>|</li>
-          <li>Our Reach</li>
-           <li>|</li>
-          <li>Leadership</li>
-           <li>|</li>
-          <li>Core Values</li>
-           <li>|</li>
+          {navLinks.map((link, index) => (
+            <React.Fragment key={index}>
+              <li><span>|</span></li>
+              <li>
+                <a
+                  href={link.href}
+                  className={link.active ? "active" : ""}
+                >
+                  {link.label}
+                </a>
+              </li>
+            </React.Fragment>
+          ))}
+          <li><span>|</span></li>
         </ul>
       </nav>
 
-      {/* Placeholder div so layout doesn't jump */}
       {isSticky && stickyProps && (
         <div style={{ height: `${stickyProps.height}px` }} />
       )}
