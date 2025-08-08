@@ -8,6 +8,7 @@ const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/ebixreact' element={<Home />} />
        <Route path="/about/overview" element={<Overview />} />
        
          {/* 404 fallback route */}
