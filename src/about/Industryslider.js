@@ -106,11 +106,11 @@ const data = [
 
 const Industryslider = () => {
   return (
-    <div className="container-fluid px-5 industry-section py-5 bg1 ">
+    <div className="container-fluid px-5 industry-section bg1 " id="industry">
       <h2>Industry expertise</h2>
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="d-flex justify-content-between align-items-center mb-4 position-relative">
         <h3>We help you realize your digital potential with...</h3>
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-2 Weformobi">
           <button className="nav-arrow swiper-button-prev-custom">&larr;</button>
           <button className="nav-arrow swiper-button-next-custom">&rarr;</button>
         </div>

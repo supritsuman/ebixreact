@@ -1,9 +1,9 @@
 
 const Globalenterprise  = () => {
   return (
-    <div className="container-fluid px-5 deliveringbox2 custpx">
+    <div className="container-fluid px-5 deliveringbox2 custpx" id="overview">
       <div className="row justify-content-center">
-        <div className="col-lg-6 py-5">
+        <div className="col-lg-6 ">
           <h2>
             Ebix is a global enterprise technology powerhouse, delivering
             transformative digital solutions that reshape how businesses,

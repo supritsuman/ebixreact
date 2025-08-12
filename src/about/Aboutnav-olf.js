@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 const Aboutnav = () => {
   const aboutRef = useRef(null);
-  const location = useLocation();
   const [isSticky, setIsSticky] = useState(false);
   const [stickyProps, setStickyProps] = useState(null);
   const [originalOffset, setOriginalOffset] = useState(0);
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeSection, setActiveSection] = useState("overview"); // default
 
   const navLinks = [
     { label: "Overview", targetId: "overview" },
@@ -25,7 +23,6 @@ const Aboutnav = () => {
     return topNavH + mainNavH;
   };
 
-  // Sticky original offset
   useEffect(() => {
     if (aboutRef.current) {
       const totalNavHeight = getTotalNavHeight();
@@ -35,24 +32,13 @@ const Aboutnav = () => {
     }
   }, []);
 
-  // ✅ Listen for any hash change (including same-page)
-  useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 100);
-    }
-  }, [location.hash]);
-
-  // Scroll spy + sticky
   useEffect(() => {
     const onScroll = () => {
       if (!aboutRef.current) return;
 
       const totalNavHeight = getTotalNavHeight();
 
-      // Sticky
+      // Sticky nav
       if (window.scrollY >= originalOffset) {
         const rect = aboutRef.current.getBoundingClientRect();
         setStickyProps({
@@ -67,7 +53,7 @@ const Aboutnav = () => {
         setStickyProps(null);
       }
 
-      // Scroll spy
+      // Scroll spy: find section in view
       let currentSection = activeSection;
       navLinks.forEach((link) => {
         const section = document.getElementById(link.targetId);
@@ -92,8 +78,9 @@ const Aboutnav = () => {
     };
   }, [originalOffset, activeSection, navLinks]);
 
-  // Common scroll function
-  const scrollToSection = (targetId) => {
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setActiveSection(targetId); // highlight immediately
     const target = document.getElementById(targetId);
     if (target) {
       const totalNavHeight = getTotalNavHeight();
@@ -103,15 +90,7 @@ const Aboutnav = () => {
         top: targetPosition,
         behavior: "smooth",
       });
-      setActiveSection(targetId);
     }
-  };
-
-  // Nav click
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    scrollToSection(targetId);
-    window.history.replaceState(null, "", `#${targetId}`);
   };
 
   return (

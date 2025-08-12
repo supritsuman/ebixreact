@@ -10,6 +10,8 @@ import Globalenterprise from './Globalenterprise';
 import Ourmission from './Ourmission';
 import Industryslider from './Industryslider';
 
+
+
 const Overview = () => {
   return (
     <>
@@ -21,6 +23,7 @@ const Overview = () => {
            <Industryslider />
            <Mindsbehind />
            <Ourcore />
+           
            <Ourmission/>
            <Footer/>
     </>

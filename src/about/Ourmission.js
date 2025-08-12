@@ -41,9 +41,9 @@ const Ourmission = () => {
   };
 
   return (
-    <div className="container-fluid px-5 deliveringbox3 custpx">
+    <div className="container-fluid px-5 deliveringbox3 custpx" id="ourmission">
       <div className="row justify-content-center">
-        <div className="col-lg-6 py-5">
+        <div className="col-lg-6">
           <div className="accordion custom-accordion" id="accordionExample">
             <AccordionItem
               title="Our Mission"

@@ -42,7 +42,7 @@ const Ourcore = () => {
 
   return (
     <>
-      <div className="container-fluid px-5 ourcore custpx bg1 innershadow py-5">
+      <div className="container-fluid px-5 ourcore custpx bg1 innershadow ourpd" id="ourcorevalues">
         <div className="row">
           <h2>Our Core Values</h2>
           <h3>Ebix’s 10,000+ professionals across 50+ countries deliver tech-driven, localized solutions with a global outlook - wherever your business operates.</h3>
