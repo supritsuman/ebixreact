@@ -12,30 +12,29 @@ const Aboutnav = () => {
   const navLinks = [
     { label: "Overview", targetId: "overview" },
     { label: "Industry Expertise", targetId: "industry" },
-    { label: "Our Reach", targetId: "reach" },
     { label: "Our Core Values", targetId: "ourcorevalues" },
+    { label: "Leadership", targetId: "leadership" },
+    { label: "Our Reach", targetId: "reach" },
     { label: "Our Mission", targetId: "ourmission" },
   ];
 
-  const getTotalNavHeight = () => {
-    const topNav = document.querySelector(".topnav");
+  // Only main nav height (skip topnav)
+  const getMainNavHeight = () => {
     const mainNav = document.querySelector(".navnew");
-    const topNavH = topNav ? topNav.getBoundingClientRect().height : 0;
-    const mainNavH = mainNav ? mainNav.getBoundingClientRect().height : 0;
-    return topNavH + mainNavH;
+    return mainNav ? mainNav.getBoundingClientRect().height : 0;
   };
 
   // Sticky original offset
   useEffect(() => {
     if (aboutRef.current) {
-      const totalNavHeight = getTotalNavHeight();
+      const mainNavHeight = getMainNavHeight();
       const rect = aboutRef.current.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
-      setOriginalOffset(rect.top + scrollY - totalNavHeight);
+      setOriginalOffset(rect.top + scrollY - mainNavHeight);
     }
   }, []);
 
-  // ✅ Listen for any hash change (including same-page)
+  // Handle hash navigation
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
@@ -50,13 +49,13 @@ const Aboutnav = () => {
     const onScroll = () => {
       if (!aboutRef.current) return;
 
-      const totalNavHeight = getTotalNavHeight();
+      const mainNavHeight = getMainNavHeight();
 
       // Sticky
       if (window.scrollY >= originalOffset) {
         const rect = aboutRef.current.getBoundingClientRect();
         setStickyProps({
-          top: totalNavHeight,
+          top: mainNavHeight,
           left: rect.left + window.scrollX,
           height: rect.height,
           width: rect.width,
@@ -72,7 +71,7 @@ const Aboutnav = () => {
       navLinks.forEach((link) => {
         const section = document.getElementById(link.targetId);
         if (section) {
-          const sectionTop = section.offsetTop - totalNavHeight - 20;
+          const sectionTop = section.offsetTop - mainNavHeight - 20;
           const sectionBottom = sectionTop + section.offsetHeight;
           if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
             currentSection = link.targetId;
@@ -92,13 +91,13 @@ const Aboutnav = () => {
     };
   }, [originalOffset, activeSection, navLinks]);
 
-  // Common scroll function
+  // Scroll function
   const scrollToSection = (targetId) => {
     const target = document.getElementById(targetId);
     if (target) {
-      const totalNavHeight = getTotalNavHeight();
+      const mainNavHeight = getMainNavHeight();
       const targetPosition =
-        target.getBoundingClientRect().top + window.scrollY - totalNavHeight - 10;
+        target.getBoundingClientRect().top + window.scrollY - mainNavHeight - 10;
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth",

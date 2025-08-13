@@ -3,7 +3,7 @@
 const Mindsbehind  = () => {
   return (
     <>
-<div className="container-fluid px-5 mindsbehind custpx"  id="reach">
+<div className="container-fluid px-5 mindsbehind custpx"  id="leadership">
                 <div className="row"> 
                      <h2>The Minds Behind the Mission</h2>
                      <h3>At Ebix, our leadership brings together experience, innovation, and purpose. They steer the company forward driving growth, empowering teams, and transforming industries.</h3>

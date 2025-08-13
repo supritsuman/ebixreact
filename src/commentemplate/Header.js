@@ -15,11 +15,9 @@ const Header = () => {
   // Function to close all menus (with delay)
   const closeAllMenus = () => {
     setTimeout(() => {
-      // Close all dropdown checkboxes
       const allCheckboxes = document.querySelectorAll(".dropdown-toggle-check");
       allCheckboxes.forEach((cb) => (cb.checked = false));
 
-      // Close navbar collapse in mobile
       const navCollapse = document.getElementById("mainNavbar");
       if (navCollapse && navCollapse.classList.contains("show")) {
         const bsCollapse =
@@ -27,9 +25,10 @@ const Header = () => {
           new window.bootstrap.Collapse(navCollapse);
         bsCollapse.hide();
       }
-    }, 150); // delay for smooth navigation before closing
+    }, 150);
   };
 
+  // Close menus if clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -44,6 +43,7 @@ const Header = () => {
     };
   }, []);
 
+  // Track navbar open/close state
   useEffect(() => {
     const navCollapse = document.getElementById("mainNavbar");
     const handleShown = () => setIsNavbarOpen(true);
@@ -62,24 +62,74 @@ const Header = () => {
     };
   }, []);
 
+  // ✅ Add class on <body> when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        document.body.classList.add("scrolled");
+      } else {
+        document.body.classList.remove("scrolled");
+      }
+    };
+
+    handleScroll(); // set initial state on mount
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menus = [
     {
       label: "About us",
       items: [
-        { name: "Overview", path: "/about/overview" },
+        { name: "Overview", path: "/about/overview", img: "w" },
         { name: "Industry Expertise", path: "/about/overview#industry" },
-        { name: "Our Reach", path: "/about/overview#reach" },
         { name: "Our Core Values", path: "/about/overview#ourcorevalues" },
-        { name: "Our Mission", path: "/about/overview#ourmission" }
+        { name: "Leadership", path: "/about/overview#leadership" },
+        { name: "Our Reach", path: "/about/overview#reach" },
+        { name: "Our Mission", path: "/about/overview#ourmission" },
       ],
     },
     {
       label: "Industries",
-      items: ["Insurance", "Healthcare", "Finance"],
+      items: [
+        "Insurance",
+        "Healthcare",
+        "Health & Wellness",
+        "Finance & Banking",
+        "Everyday & Leisure Travel",
+        "Business & Corporate Travel",
+        "Payment Services",
+        "Group Experiences & Events",
+        "Bespoke & Luxury Journeys",
+        "Remittance",
+        "Forex",
+        "Gift Cards & Vouchers",
+        "Remittance",
+        "Education",
+      ],
     },
     {
       label: "Our Brands",
-      items: ["Brand A", "Brand B"],
+      items: [
+        {
+          name: "Ebixcash World Money",
+          path: "http://www.ebixcashworldmoney.com",
+          icon: (
+            <img
+              className="iocnhe"
+              src="/ebixreact/images/lg1.svg"
+              alt="World Money"
+            />
+          ),
+        },
+        { name: "Via", path: "https://in.via.com", icon: <img src="/images/via.svg" alt="Via" /> },
+        { name: "Mercury Travels", path: "https://www.mercurytravels.co.in", icon: <img src="/images/mercury.svg" alt="Mercury" /> },
+        { name: "Ebix Smart Class", path: "https://www.ebixsmartclass.com", icon: <img src="/images/smartclass.svg" alt="Smart Class" /> },
+        { name: "Zillious", path: "https://www.zillious.com/", icon: <img src="/images/zillious.svg" alt="Zillious" /> },
+        { name: "Adam", path: "https://www.adam.com", icon: <img src="/images/adam.svg" alt="Adam" /> },
+        { name: "AhaTaxis", path: "https://www.ahataxis.com", icon: <img src="/images/ahataxis.svg" alt="Aha Taxis" /> },
+        { name: "Routier", path: "https://routier.in", icon: <img src="/images/routier.svg" alt="Routier" /> },
+      ],
     },
     {
       label: "Investors",
@@ -99,10 +149,11 @@ const Header = () => {
   ];
 
   const isActiveMenuLabel = (menu) => {
-    if (menu.label === "About us") {
-      return menu.items.some((item) => location.pathname === item.path);
-    } else {
-      return menu.items.some((item) => {
+    return menu.items.some((item) => {
+      if (typeof item === "object" && item.path) {
+        return location.pathname === item.path;
+      }
+      if (typeof item === "string") {
         const slug = `/${menu.label
           .toLowerCase()
           .replace(/ /g, "-")}/${item
@@ -110,8 +161,9 @@ const Header = () => {
           .replace(/ /g, "-")
           .replace(/&/g, "and")}`;
         return location.pathname === slug;
-      });
-    }
+      }
+      return false;
+    });
   };
 
   return (
@@ -151,7 +203,7 @@ const Header = () => {
             className="collapse navbar-collapse justify-content-center"
             id="mainNavbar"
           >
-            <ul className="navbar-nav mb-2 mb-lg-0">
+            <ul className="navbar-nav mb-lg-0">
               {menus.map((menu, idx) => {
                 const menuId = `menu-toggle-${idx}`;
                 const isIndustries = menu.label === "Industries";
@@ -183,29 +235,19 @@ const Header = () => {
 
                     <ul className={`dropdown-menu submenu-${idx}`}>
                       {isIndustries
-                        ? [
-                            "Insurance",
-                            "Healthcare",
-                            "Health & Wellness",
-                            "Finance & Banking",
-                            "Everyday & Leisure Travel",
-                            "Business & Corporate Travel",
-                            "Payment Services",
-                            "Group Experiences & Events",
-                            "Bespoke & Luxury Journeys",
-                            "Remittance",
-                            "Forex",
-                            "Gift Cards & Vouchers",
-                            "Remittance",
-                            "Education",
-                          ].map((label, i) => (
+                        ? menu.items.map((label, i) => (
                             <li
                               key={i}
                               className={i === 6 || i === 13 ? "borgnone" : ""}
                             >
                               <Link
                                 className="dropdown-item"
-                                to="#"
+                                to={`/${menu.label
+                                  .toLowerCase()
+                                  .replace(/ /g, "-")}/${label
+                                  .toLowerCase()
+                                  .replace(/ /g, "-")
+                                  .replace(/&/g, "and")}`}
                                 onClick={closeAllMenus}
                               >
                                 <div className="insobox">
@@ -227,7 +269,8 @@ const Header = () => {
                             </li>
                           ))
                         : menu.label === "About us"
-                        ? menu.items.map((item, subIdx) => (
+                        ? // INTERNAL routes => use <Link to=...>
+                          menu.items.map((item, subIdx) => (
                             <li key={subIdx}>
                               <Link
                                 className="dropdown-item"
@@ -238,7 +281,26 @@ const Header = () => {
                               </Link>
                             </li>
                           ))
-                        : menu.items.map((item, subIdx) => (
+                        : menu.label === "Our Brands"
+                        ? // EXTERNAL links => use <a href target="_blank">
+                          menu.items.map((item, subIdx) => (
+                            <li key={subIdx}>
+                              <a
+                                className="dropdown-item"
+                                href={item.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={closeAllMenus}
+                              >
+                                {item.icon && (
+                                  <span className="iconbox">{item.icon}</span>
+                                )}
+                                {item.name}
+                              </a>
+                            </li>
+                          ))
+                        : // Other menus with plain strings
+                          menu.items.map((item, subIdx) => (
                             <li key={subIdx}>
                               <Link
                                 className="dropdown-item"
