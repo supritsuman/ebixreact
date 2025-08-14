@@ -15,8 +15,10 @@ const Ourbrands = () => {
       <div className="container-fluid p-5 custpd">
         <h2 className="text-center mb-3 mt-3 mt-md-5">Our Brands</h2>
         <p className="text-center mb-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          From insurance to healthcare, travel to finance, we deliver solutions that connect and empower.
+<br />
+Together, they form a global ecosystem transforming industries and enriching lives.
+ 
         </p>
       </div>
 
