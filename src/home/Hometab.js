@@ -54,7 +54,7 @@ const Hometab = () => {
                   <img src={activeTabData.cards[0].image} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <div className="card-body-text">
-                      <h5 className="card-title">{activeTabData.cards[0].title}</h5>
+                      <h5 className="card-title">{activeTabData.cards[0].title}  <i>22 May 2025</i></h5>
                       <p className="card-text">{activeTabData.cards[0].text}</p>
                       <div className="bannerreadmore">
                         <a className="bannerbtn" href="#">
@@ -80,7 +80,7 @@ const Hometab = () => {
                     </div>
                     <div className="card-body">
                       <div className="card-body-text">
-                        <h5 className="card-title">{card.title}</h5>
+                        <h5 className="card-title">{card.title} <i>21 May 2025</i></h5>
                         <p className="card-text">{card.text}</p>
                         <div className="bannerreadmore">
                           <a className="bannerbtn" href="#">

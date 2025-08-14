@@ -15,9 +15,9 @@ const Breadcrumb = () => {
   };
 
   return (
-    <div className="container-fluid px-4">
+    <div className="container-fluid px-4 breadcrumbtop">
       <div
-        className="breadcrumbtop"
+        className=""
         style={{ '--bs-breadcrumb-divider': "'/'" }}
         aria-label="breadcrumb"
       >
