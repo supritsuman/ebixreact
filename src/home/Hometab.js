@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import tabs from '../data/tabs'; 
-
+import { Link } from "react-router-dom";
 // Responsive window width hook
 const useWindowWidth = () => {
   const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
@@ -57,12 +57,12 @@ const Hometab = () => {
                       <h5 className="card-title">{activeTabData.cards[0].title}  <i>22 May 2025</i></h5>
                       <p className="card-text">{activeTabData.cards[0].text}</p>
                       <div className="bannerreadmore">
-                        <a className="bannerbtn" href="#">
+                           <Link className="bannerbtn" to="/mediadetails/mediadetails">
                           <span className="btn-content">
                             <span className="text-top">Read More →</span>
                             <span className="text-bottom">Read More →</span>
                           </span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -83,12 +83,12 @@ const Hometab = () => {
                         <h5 className="card-title">{card.title} <i>21 May 2025</i></h5>
                         <p className="card-text">{card.text}</p>
                         <div className="bannerreadmore">
-                          <a className="bannerbtn" href="#">
+                          <Link className="bannerbtn" to="/mediadetails/mediadetails">
                             <span className="btn-content">
                               <span className="text-top">Read More →</span>
                               <span className="text-bottom">Read More →</span>
                             </span>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
