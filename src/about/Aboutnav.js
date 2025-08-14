@@ -12,8 +12,8 @@ const Aboutnav = () => {
   const navLinks = [
     { label: "Overview", targetId: "overview" },
     { label: "Industry Expertise", targetId: "industry" },
-    { label: "Our Core Values", targetId: "ourcorevalues" },
     { label: "Leadership", targetId: "leadership" },
+    { label: "Our Core Values", targetId: "ourcorevalues" },
     { label: "Our Reach", targetId: "reach" },
     { label: "Our Mission", targetId: "ourmission" },
   ];

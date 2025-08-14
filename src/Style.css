@@ -614,6 +614,19 @@ padding:50px 20px;
   transform: scale(1.1);
 }
 
+.aboutbanner .bannerleft {
+  animation-name: fadeInLeft;
+  animation-delay: 0.5s;
+}
+
+.aboutbanner .bannerleft,
+.aboutbanner .homebannerright,
+ {
+  opacity: 0;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
 
 
 /* Common Initial State */
@@ -1079,7 +1092,7 @@ padding:50px 20px;
 
 
 
-.navbar-collapse{position: absolute; z-index: 99999; background: #fff;    width: 99.9999%;     top:64px; border-top:#ccc 1px solid; left:0; padding:25px 0; height:100vh; overflow: auto;}
+.navbar-collapse{position: absolute; z-index: 99999; background: #fff;    width: 99.9999%;     top:55px; border-top:#ccc 1px solid; left:0; padding:25px 0; height:100vh; overflow: auto;}
 
 .navbar-nav .dropdown-menu{position: static; display:none;}
 .dropdown-toggle-check:checked + label + .dropdown-menu{ position:static; display: block;}
@@ -1263,5 +1276,11 @@ padding:50px 20px;
   
 
 /*end home*/
+
+
+
+
+
+
 
 

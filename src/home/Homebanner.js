@@ -51,7 +51,7 @@ useEffect(() => {
     if (line1) line1.classList.add("slide-left"); // First line goes left
     if (line2) line2.classList.add("slide-left"); // Second line also goes left
     if (line3) line3.classList.add("slide-right"); // Third line goes left
-  }, 2500);
+  }, 1500);
 
   return () => clearTimeout(timer);
 }, []);
