@@ -12,7 +12,7 @@ const brandImages = [
 const Ourbrands = () => {
   return (
     <div className="ourbrandbox">
-      <div className="container-fluid p-5 custpd">
+      <div className="container-fluid p-5 pb-0 custpd">
         <h2 className="text-center mb-3 mt-3 mt-md-5">Our Brands</h2>
         <p className="text-center mb-4">
           From insurance to healthcare, travel to finance, we deliver solutions that connect and empower.
