@@ -1011,7 +1011,7 @@ padding:50px 20px;
   padding: 0;
   list-style: none;
   float: left;
-  min-width:900px;
+  min-width:1000px;
 }
 
 .about-nav .label { color: #fff;  }
@@ -1082,7 +1082,7 @@ padding:50px 20px;
 
 .homebannerright p{display:none;}
 .bannerleft p{    font-size: 20px;}
-.bannerleft h1{font-size: 38px; line-height:48px;}
+.bannerleft h1{font-size: 30px; line-height:28px;}
 .navbar-brand {
     width: 80px;
     margin: 0 auto;
@@ -1090,7 +1090,7 @@ padding:50px 20px;
 .searchbut{display:none;}
 .rightseach{position: absolute !important;; right:20px;}
 
-
+.about-nav{overflow: auto;}
 
 .navbar-collapse{position: absolute; z-index: 99999; background: #fff;    width: 99.9999%;     top:55px; border-top:#ccc 1px solid; left:0; padding:25px 0; height:100vh; overflow: auto;}
 
