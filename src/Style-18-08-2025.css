@@ -4,7 +4,7 @@ body.scrolled .navbar {
 }
 
 .logotop{height:45px;}
-.topnav{border-bottom:#DEDEDE 1px solid; text-align:right; padding-top:4px; padding-bottom:4px; font-size:14px; font-family: 'Inter', sans-serif;
+.topnav{border-bottom:#DEDEDE 1px solid; height:35px; text-align:right; padding-top:5px; font-size:14px; font-family: 'Inter', sans-serif;
   font-weight:300; position:absolute; width:100%; background:#fff; z-index: 999999; top:0;left: 0; background:#f3f3f3; }
 
 .navnew{background-color:#fff; position:fixed; z-index:999999; width:100%; top:35px;     border-bottom: #DEDEDE 1px solid; left:0; padding-top:0; padding-bottom:0;    transition: top 0.200s ease-in; /* smooth movement */}  
@@ -12,7 +12,7 @@ body.scrolled .navbar {
 
 .navnew ul{margin-bottom:-7px!important;}
 
-.topnav a::before {  content: "";  position: absolute;  top: 0;  left: 50%;  width: 0;  height: 100%;  background-color: #0382EA;  transition: width 0.35s ease, left 0.35s ease;  z-index: -1;  transform: translateX(-50%);  /*border-radius: 5px;*/}
+.topnav a::before {  content: "";  position: absolute;  top: 0;  left: 50%;  width: 0;  height: 100%;  background-color: #0382EA;  transition: width 0.35s ease, left 0.35s ease;  z-index: -1;  transform: translateX(-50%);  border-radius: 5px;}
 
 .topnav a:hover::before {  width: 100%;  left: 50%;}
 
@@ -114,7 +114,7 @@ box-shadow: 0 0 12px #79baef, 0 0 24px #79baef;
 .bannermvideo{opacity:0.9;}
 
 .bannerleft{align-self: center; padding-bottom: 74px;}
-.bannerleft p{font-weight:500; font-size:20px; color:#fff; text-align: left;}
+.bannerleft p{font-weight:500; font-size:20px; color:#fff;}
 .bannerleft h1{font-weight:800; font-size:52px; color:#fff; line-height:60px; text-transform: uppercase; margin-top:15px;}
 
 
@@ -131,7 +131,7 @@ box-shadow: 0 0 12px #79baef, 0 0 24px #79baef;
 .counter-slash{padding:0 5px; display:inline-block; font-size:16px; color:#8c8c8c; font-weight:400;}
 .counter-total{font-size:14px; color:#8c8c8c; font-weight:400;}
 
-.bannerleft{padding-left:5%;}
+.bannerleft{padding-left:5%; border: red 1px solid;}
 .carouselboxin{margin-left:5%;}
 
 #myCarousel .carousel-indicators{padding-left: 5%;}
@@ -1267,14 +1267,12 @@ padding:50px 20px;
     }
     @keyframes slideLeft {
       0% { transform: translateX(0); opacity: 1; }
-      100% { transform: translateX(-13vw); opacity: 1; } /* only slight move */
+      100% { transform: translateX(-7vw); opacity: 1; } /* only slight move */
     }
     @keyframes slideRight {
       0% { transform: translateX(0); opacity: 1; }
-      100% { transform: translateX(10vw); opacity: 1; } /* only slight move */
+      100% { transform: translateX(7vw); opacity: 1; } /* only slight move */
     }
-
-    #line1.slide-left{text-align: left; transform:translateX(0vw);}
   
 
 /*end home*/

@@ -93,9 +93,9 @@ useEffect(() => {
                   <div className="row">
                     <div className="col-lg-8 bannerleft position-relative">
                       <div className="banner-home-text">
-                        
+                              <p>Empowering Enterprises Through</p>
                         <div className="fade-wrapper">
-                          <p id="line1">Empowering Enterprises Through</p>
+                    
                           <h1 id="line2">Innovation scale</h1>
                         </div>
                         <div className="fade-wrapper">
