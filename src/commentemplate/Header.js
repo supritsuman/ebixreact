@@ -43,7 +43,7 @@ const Header = () => {
     };
   }, []);
 
-  // Track navbar open/close state
+  // Track navbar open/close state (sync with Bootstrap)
   useEffect(() => {
     const navCollapse = document.getElementById("mainNavbar");
     const handleShown = () => setIsNavbarOpen(true);
@@ -81,7 +81,7 @@ const Header = () => {
     {
       label: "About us",
       items: [
-        { name: "Overview", path: "/about/overview", img: "w" },
+        { name: "Overview", path: "/about/overview" },
         { name: "Industry Expertise", path: "/about/overview#industry" },
         { name: "Our Core Values", path: "/about/overview#ourcorevalues" },
         { name: "Leadership", path: "/about/overview#leadership" },
@@ -92,20 +92,20 @@ const Header = () => {
     {
       label: "Industries",
       items: [
-        "Insurance",
-        "Healthcare",
-        "Health & Wellness",
-        "Finance & Banking",
-        "Everyday & Leisure Travel",
-        "Business & Corporate Travel",
-        "Payment Services",
-        "Group Experiences & Events",
-        "Bespoke & Luxury Journeys",
-        "Remittance",
-        "Forex",
-        "Gift Cards & Vouchers",
-        "Remittance",
-        "Education",
+        { name: "Insurance", path: "/industries/insurance" },
+        { name: "Healthcare", path: "/industries/healthcare" },
+        { name: "Health & Wellness", path: "/industries/health-and-wellness" },
+        { name: "Finance & Banking", path: "/industries/finance-and-banking" },
+        { name: "Everyday & Leisure Travel", path: "/industries/everyday-and-leisure-travel" },
+        { name: "Business & Corporate Travel", path: "/industries/business-and-corporate-travel" },
+        { name: "Payment Services", path: "/industries/payment" }, // custom clean slug
+        { name: "Group Experiences & Events", path: "/industries/group-experiences-and-events" },
+        { name: "Bespoke & Luxury Journeys", path: "/industries/bespoke-and-luxury-journeys" },
+        { name: "Remittance", path: "/industries/remittance" },
+        { name: "Forex", path: "/industries/forex" },
+        { name: "Gift Cards & Vouchers", path: "/industries/gift-cards-and-vouchers" },
+        { name: "Remittance", path: "/industries/remittance" }, // second one preserved
+        { name: "Education", path: "/industries/education" },
       ],
     },
     {
@@ -148,10 +148,14 @@ const Header = () => {
     },
   ];
 
+  // Highlight active menu label (handles object paths and string slugs; supports # anchors)
   const isActiveMenuLabel = (menu) => {
     return menu.items.some((item) => {
       if (typeof item === "object" && item.path) {
-        return location.pathname === item.path;
+        // Ignore external links
+        if (/^https?:\/\//i.test(item.path)) return false;
+        const basePath = item.path.split("#")[0];
+        return location.pathname === basePath;
       }
       if (typeof item === "string") {
         const slug = `/${menu.label
@@ -184,7 +188,7 @@ const Header = () => {
             <Logo />
           </Link>
 
-          <button
+        <button
             className="navbar-toggler newnavbar"
             type="button"
             onClick={() => setIsNavbarOpen((prev) => !prev)}
@@ -235,27 +239,21 @@ const Header = () => {
 
                     <ul className={`dropdown-menu submenu-${idx}`}>
                       {isIndustries
-                        ? menu.items.map((label, i) => (
+                        ? // Industries: predefined paths + dynamic border class every 7th item
+                          menu.items.map((item, i) => (
                             <li
                               key={i}
-                              className={i === 6 || i === 13 ? "borgnone" : ""}
+                              className={((i + 1) % 7 === 0) ? "borgnone" : ""}
                             >
                               <Link
                                 className="dropdown-item"
-                                to={`/${menu.label
-                                  .toLowerCase()
-                                  .replace(/ /g, "-")}/${label
-                                  .toLowerCase()
-                                  .replace(/ /g, "-")
-                                  .replace(/&/g, "and")}`}
+                                to={item.path}
                                 onClick={closeAllMenus}
                               >
                                 <div className="insobox">
                                   <div className="menuicon">
                                     <img
-                                      src={`${process.env.PUBLIC_URL}/images/menuiocn${
-                                        i + 1
-                                      }.svg`}
+                                      src={`${process.env.PUBLIC_URL}/images/menuiocn${i + 1}.svg`}
                                       alt={`Icon ${i + 1}`}
                                       onError={(e) => {
                                         e.target.onerror = null;
@@ -263,7 +261,7 @@ const Header = () => {
                                       }}
                                     />
                                   </div>
-                                  <p>{label}</p>
+                                  <p>{item.name}</p>
                                 </div>
                               </Link>
                             </li>

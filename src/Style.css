@@ -260,7 +260,7 @@ padding:50px 20px;
 
     .bg1{background-color: #e9f1fc;}
     .deliveringbox h2{font-size:32px;  font-family: 'Inter'; font-size:400; line-height:34px;}
-    .deliveringbox p{font-size:16px;  font-family: 'Inter'; font-size:400; line-height:24px;}
+    .deliveringbox p{font-size:16px;  font-family: 'Inter'; font-weight:400; line-height:24px;}
 
     .deliveringbox2 h2{font-size:30px;  font-family: 'Inter'; font-size:400; line-height:38px; color: #000; background: linear-gradient(to right, #0382EA, #E94FDA);   -webkit-background-clip: text;  -webkit-text-fill-color: transparent;}
     .deliveringbox2 p{font-size:16px;  font-family: 'Inter'; font-size:400; line-height: 24px;}
@@ -733,7 +733,7 @@ padding:50px 20px;
 .breadcrumbtop{margin-top:95px;  border-bottom: #DEDEDE 1px solid;}
 .aboutbanner{margin-top:0px; height: 100%; max-height:100%;}
 
-.aboutbanner .videoInsert{height:100%;}
+.aboutbanner .videoInsert{height:100%; height:100vh;}
 
 .breadcrumb{font-size:14px; color:#000; padding:0 10px; margin:0 0 7px 0;}
 .breadcrumb-item a{color: #8c8c8c; text-decoration: none; transition: all 0.3s; position: relative;}
@@ -1048,6 +1048,47 @@ padding:50px 20px;
 
 .happeningbox {padding-top:55px;}
 
+.nexttopbox{background:#F9FBFD;}
+
+.stateboxcard .card{background: linear-gradient(180deg, #3377E6 0%, #238BBF 100%); border: none; padding:30px 35px 0 35px;   --bs-card-spacer-y: 0;   --bs-card-spacer-x: 0; border-radius:15px;}
+.stateboxcard .card h2{font-size: 22px;font-weight: 300;  margin: 20px 0 15px 0; color:#fff;}
+.stateboxcard .card h2 strong{ font-weight: 600;}
+.stateboxcard .card p {font-size: 16px;    font-family: 'Inter';    font-weight: 400;    line-height: 24px; color:#fff;}
+.luminosity-img {  mix-blend-mode: luminosity; max-width:350px; margin-top:70px;}
+
+.ebixinsurancebox{padding-top: 80px;  padding-bottom: 35px; background: linear-gradient(  to bottom,  rgba(204, 233, 255, 1) 0%,  rgba(204, 233, 255, 1) 2%,  rgba(255, 255, 255, 0) 100%);}
+.ebixinsurancebox h2{font-size:32px; color:#000; font-weight: normal; line-height:34px; margin:0 0 35px 0;}
+
+.ebixinsurancebox .cardbox{    background: linear-gradient(180deg, #3377E6 0%, #238BBF 100%);  padding: 30px 35px 0 35px;       border-radius: 15px; color:#fff; text-align: left;}
+
+.ebixinsurancebox .bannerbtn{border: 2px solid #fff; color: #fff;}
+.ebixinsurancebox .bannerreadmore .btn-content .text-top{color: #fff;}
+.ebixinsurancebox .bannerreadmore .bannerbtn::after{background: #fff;}
+.ebixinsurancebox .bannerreadmore .bannerbtn:hover{border: 2px solid #0382EA;}
+.ebixinsurancebox .bannerreadmore:hover .bannerbtn::after{background: #0382EA;}
+
+.handimg{position:absolute; bottom:-50px; right:0;}
+
+.airportforexo{padding-top: 80px;  padding-bottom:400px;  background: url('../public/images/airportbg.png') no-repeat bottom #c1efff; background-size: cover; }
+
+.airportforexo h2{font-size:32px; color:#000; font-weight: normal; line-height:34px; margin:0 0 35px 0;}
+.airportforexo p{font-size:16px;  font-family: 'Inter'; font-weight:400; line-height:24px;}
+
+
+.institutionalbox {  display: flex;  align-items: center;  gap: 15px; margin-bottom:35px;}
+.institutionalbox-text {  font-size: 18px;  font-weight: 600; line-height: normal;}
+.institutionalboxleft img {  width:70px;  height: auto;   display: block;}
+.institutionalboxleft {  font-size: 18px;  font-weight: 600;  color: #fff;}
+
+.Institutionalmainbox{padding-top:80px; padding-bottom:50px;}
+.Institutionalmainbox .stateboxcard .card{padding:35px;}
+
+.gra1{background:#0382EA!important;}
+.gra2{background:#1C85C7!important;}
+.gra3{background:#0C9AF2!important;}
+.gra4{background:#03BCEA!important;}
+
+
 
 @media only screen and (max-width:1170px)
 {
@@ -1141,6 +1182,7 @@ padding:50px 20px;
 @media only screen and (max-width:990px){
 .newnavbar{position:absolute; left:20px;}
 .navnew .nav-link.active{color:#000;}
+.handimg{display:none;}
 }  
 
 @media only screen and (max-width: 767px)
@@ -1279,6 +1321,20 @@ padding:50px 20px;
 
 /*end home*/
 
+/*.homeslideboxmain .carousel-item{    position: relative;
+    height: 100vh;}
+.homeslideboxmain  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transform: translateY(0px);
+    transition: transform 0.1s linear;
+}
+*/
 
 
 

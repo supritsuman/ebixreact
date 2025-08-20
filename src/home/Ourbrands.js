@@ -22,7 +22,7 @@ Together, they form a global ecosystem transforming industries and enriching liv
         </p>
       </div>
 
-      <div className="brand-slider-wrapper">
+      <div className="brand-slider-wrapper mb-3">
         <div className="brand-slider">
           {[...brandImages, ...brandImages].map((brand, index) => (
             <div key={index} className="brand-slide">
@@ -34,7 +34,7 @@ Together, they form a global ecosystem transforming industries and enriching liv
           ))}
         </div>
       </div>
-
+{/*
       <div className="w-100 text-center mt-4 mb-5">
         <div className="bannerreadmore">
           <a className="bannerbtn" href="#">
@@ -44,7 +44,7 @@ Together, they form a global ecosystem transforming industries and enriching liv
             </span>
           </a>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };

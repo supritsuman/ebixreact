@@ -1,5 +1,5 @@
 import flipboxData from '../data/flipboxData';
-
+import { Link } from "react-router-dom";
 const Flipbox = () => {
   return (
     <div className="row mt-5">
@@ -29,12 +29,12 @@ const Flipbox = () => {
                   <h2>{item.title}</h2>
                   <p>{item.backText}</p>
                   <div className="tereadmore text-start">
-                    <a className="read-more-btn" href="#">
+                    <Link className="read-more-btn" to={item.link}>
                       <span className="arrow">
                         <img src={`${process.env.PUBLIC_URL}/images/icon5.svg`} alt="arrow" />
                       </span>{' '}
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

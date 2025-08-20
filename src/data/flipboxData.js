@@ -1,6 +1,5 @@
 // flipboxData.js
 
-
 const flipboxData = [
   {
     title: "Technology",
@@ -13,6 +12,7 @@ const flipboxData = [
     ],
     backText:
       "Specialized technology solutions across Insurance Tech, Fintech, Health & Lifescience, and Travel tech sectors, delivering innovative digital transformation for industry-specific needs.",
+    link: "/about/overview",   // 👈 back side link
   },
   {
     title: "Forex & Payments",
@@ -25,6 +25,7 @@ const flipboxData = [
     ],
     backText:
       "Comprehensive financial solutions for seamless transactions across borders, with secure payment processing and money transfer services.",
+    link: "/industries/payment",   // 👈 back side link
   },
   {
     title: "Travels",
@@ -37,6 +38,7 @@ const flipboxData = [
     ],
     backText:
       "Your one-stop destination for all travel needs - from flights and hotels to luxury vacations and cruise experiences.",
+    link: "/travels",   // 👈 back side link
   },
   {
     title: "Ebix Next",
@@ -49,8 +51,8 @@ const flipboxData = [
     ],
     backText:
       "Your one-stop destination for all travel needs - from flights and hotels to luxury vacations and cruise experiences.",
+    link: "/ebixnext",   // 👈 back side link
   },
-  
 ];
 
 export default flipboxData;
