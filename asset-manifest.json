@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/ebixreact/static/css/main.19644e68.css",
-    "main.js": "/ebixreact/static/js/main.a0b86d52.js",
+    "main.css": "/ebixreact/static/css/main.ae081f1f.css",
+    "main.js": "/ebixreact/static/js/main.c23099a3.js",
     "static/media/companydata.png": "/ebixreact/static/media/companydata.29cd7a405390a110eec1.png",
     "static/media/airportbg.png": "/ebixreact/static/media/airportbg.b256ee120b3143cf6100.png",
     "static/media/crc.svg": "/ebixreact/static/media/crc.a3f4619948f59d0fd631.svg",
     "index.html": "/ebixreact/index.html",
-    "main.19644e68.css.map": "/ebixreact/static/css/main.19644e68.css.map",
-    "main.a0b86d52.js.map": "/ebixreact/static/js/main.a0b86d52.js.map"
+    "static/media/upload.svg": "/ebixreact/static/media/upload.ead3512c7e42af5744c3.svg",
+    "static/media/selectarrow.svg": "/ebixreact/static/media/selectarrow.b181780c8134b1959d25.svg",
+    "main.ae081f1f.css.map": "/ebixreact/static/css/main.ae081f1f.css.map",
+    "main.c23099a3.js.map": "/ebixreact/static/js/main.c23099a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.19644e68.css",
-    "static/js/main.a0b86d52.js"
+    "static/css/main.ae081f1f.css",
+    "static/js/main.c23099a3.js"
   ]
 }
